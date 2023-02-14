@@ -1,0 +1,35 @@
+<!-- Contact section -->
+
+        <h2 class="tm-text-primary">Register</h2>
+        <hr class="mb-5">
+        <div class="row">
+            <div class="col-xl-10 tm-contact-col-l mb-4">
+                <!-- FormGroup -->
+                    <form [formGroup]="registerForm"  (ngSubmit) = "register('name','password', 'email')">
+                        <!-- form  -->
+                        <div class="form-group">
+                            <label for="name">Họ Tên:</label>
+                            <!-- gắn name ="" và ngModel để dùng ngModel -->
+                            <input type="text" class="form-control"   placeholder="Enter Họ Tên" id="name" name="name" formControlName="name" >
+                        </div>
+                        <div class="form-group">
+                        <label for="email">Email address<span class="text-danger">*</span>:</label>
+                        <!-- gắn thêm  #email = "ngModel",  name="email", ngModel để validate -->
+                        <input type="email"  class="form-control" placeholder="Enter email" id="email" name="email" formControlName="email" >
+                        <span *ngIf="email.invalid && email.touched" class="error"> Email field is invalid </span>
+                        </div>
+                        <div class="form-group">
+                        <label for="password">Password<span class="text-danger">*</span>:</label>
+                        <input type="password" class="form-control" placeholder="Enter password" id="password" name="password" formControlName="password">
+                        <span *ngIf="password.invalid && password.touched" class="error"> password field is invalid </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số Điện Thoại:</label>
+                            <input type="text" class="form-control"  placeholder="Enter Số Điện Thoại" id="phone" name="phone" formControlName="phone">
+                        </div>
+                        <!-- [disabled] = "registerForm.invalid" dùng để vô hiệu hóa nút submid nếu chưa nhập đủ dử liệu cần -->
+                        <button [disabled] = "registerForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+            </div>
+        </div>
+    

@@ -1,0 +1,65 @@
+<!-- Gallery section -->
+
+        <h2 class="tm-text-primary">{{title}}</h2>
+        <hr class="mb-5">
+        <app-menu></app-menu>
+        <div class="row">
+            <!-- <div class="tm-gallery col-lg-6" *ngFor="let i of allProducts" style="left: 1px;" >
+            <a routerLink="/danh-muc/{{i._id}}">
+                <figure class="effect-honey tm-gallery-item building" >
+                    <img src="./assets/img/gallery/tn/{{i.img}}" alt="Image"/>
+                    <figcaption>
+                        <h2><i>{{i.name}}</i>
+                        </h2><br>
+                        <h3>
+                            <i>Price :{{i.price| number : '1.0-0'}} Vnd</i>
+                        </h3>
+                        		
+                    </figcaption>		
+                </figure>
+            </a> -->
+
+            <div class="card col-lg-6" *ngFor="let i of allProducts" >
+                <div class="col-12"  style="padding-top:10px">
+                    <div class="single-item">
+                        <!-- @if($np->promotion_price !=0 )
+                        <div class="ribbon-wrapper">
+                            <div class="ribbon sale">Sale</div>
+                        </div>
+                        @endif -->
+                        <div class="single-item-header" >
+                            <a class="row" routerLink="/san-pham/{{i._id}}" style="margin: auto!important">
+                                <img class="col-xl-12"  src="./assets/img/gallery/tn/{{i.img}}" alt=""></a>
+                        </div>
+                        <div class="single-item-body">
+                            <p class="single-item-title">{{i.name}}</p>
+                            <p class="single-item-price" style="font-size: 15px;">
+                                <!-- @if($np->promotion_price ==0) -->
+                                <span class="flash-sale">{{i.price| number : '1.0-0'}} Vnd</span>
+                                <!-- @else -->
+                                <!-- <span class="flash-del">{{number_format($np->unit_price)}} đồng</span>
+                                <span class="flash-sale">{{number_format($np->promotion_price)}} đồng</span>
+                                @endif -->
+                            </p>
+                        </div>
+                        <div class="single-item-caption" style="display: flex; margin-bottom: 20px;">
+                                <a class="add-to-cart pull-left" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                <a class="beta-btn primary" routerLink="/san-pham/{{i._id}}">Chi Tiết<i class="fa fa-chevron-right"></i></a>
+                                <div class="clearfix"></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- </div> -->
+        </div>
+    
+        <div class="tm-paging">
+            <a href="javascript:void(0);" class="active tm-paging-link" data-page="1">1</a>
+            <a href="javascript:void(0);" class="tm-paging-link" data-page="2">2</a>
+            <a href="javascript:void(0);" class="tm-paging-link" data-page="3">3</a>
+            <a href="javascript:void(0);" class="tm-paging-link" data-page="4">4</a>
+        </div>
+    

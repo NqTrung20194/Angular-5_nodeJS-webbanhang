@@ -1,0 +1,21 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css']
+})
+export class MainComponent implements OnInit {
+
+  constructor() { }
+   token;
+  ngOnInit(): void {
+    this.token = localStorage.getItem('token');
+    if(this.token !=null){
+      console.log('token đã hết hạn');
+      localStorage.clear()
+     }
+  }
+  
+  
+}

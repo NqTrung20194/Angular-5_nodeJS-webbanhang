@@ -1,0 +1,20 @@
+<div class="category">
+    <ul>
+        <li *ngFor="let i of sidebar">
+            <span *ngIf = "i.parents == ''">
+                <a routerLink="/danh-muc/{{i._id}}" class="active tm-gallery-link" data-filter="*">
+                    <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                    {{i.name}}
+                </a>
+            </span>
+            <ul class="sub-menu">
+                <li *ngFor="let j of i.childs">
+                        <a routerLink="/danh-muc/{{j._id}}" class="active tm-gallery-link" data-filter="*">
+                            <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                            {{j.name}}
+                        </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
